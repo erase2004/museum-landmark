@@ -39,12 +39,15 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
+							'images/07.png': '50% 10%',
+							'images/08.jpg': '60% 20%',
+							'images/09.jpg': '70% 30%',
+							'images/04.jpg': '60% 10%',
+							'images/05.jpg': '30% 50%',
+							'images/06.png': '40% 20%',
 							'images/01.jpg': '50% 10%',
 							'images/02.gif': 'top',
-							'images/03.jpg': '75% 25%',
-							'images/04.jpg': '50% 10%',
-							'images/05.jpg': '30% 50%',
-							'images/06.png': '40% 20%'
+							'images/03.jpg': '80% 25%'
 						},
 
 					// Delay.
