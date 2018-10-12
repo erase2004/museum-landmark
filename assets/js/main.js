@@ -39,6 +39,9 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
+							'images/10.jpg': '50% 10%',
+							'images/11.png': '60% 15%',
+							'images/12.jpg': '70% 10%',
 							'images/07.png': '50% 10%',
 							'images/08.jpg': '60% 20%',
 							'images/09.jpg': '70% 30%',
