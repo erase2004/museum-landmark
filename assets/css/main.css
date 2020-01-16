@@ -155,7 +155,7 @@
 		transition: opacity 2s ease-in-out;
 		height: 100%;
 		left: 0;
-		opacity: 0.25;
+		opacity: 0.5;
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -163,28 +163,45 @@
 	}
 
 		#bg div {
-			-moz-transition: opacity 3s ease, visibility 3s;
-			-webkit-transition: opacity 3s ease, visibility 3s;
-			-ms-transition: opacity 3s ease, visibility 3s;
-			transition: opacity 3s ease, visibility 3s;
+			-moz-transition: opacity 1.5s ease;
+			-webkit-transition: opacity 1.5s ease;
+			-ms-transition: opacity 1.5s ease;
+			transition: opacity 1.5s ease;
 			background-size: cover;
 			height: 100%;
-			left: 0;
 			opacity: 0;
 			position: absolute;
 			top: 0;
 			visibility: hidden;
-			width: 150%;
+			width: 125%;
+		}
+
+		#bg div.left {
+			left: 0;
+		}
+
+		#bg div.right {
+			right: 0;
 		}
 
 			#bg div.visible {
-				-moz-animation: bg 45s linear infinite;
-				-webkit-animation: bg 45s linear infinite;
-				-ms-animation: bg 45s linear infinite;
-				animation: bg 45s linear infinite;
 				opacity: 1;
 				visibility: visible;
 				z-index: 1;
+			}
+
+			#bg div.left.visible {
+				-moz-animation: bg-left 45s linear infinite;
+				-webkit-animation: bg-left 45s linear infinite;
+				-ms-animation: bg-left 45s linear infinite;
+				animation: bg-left 45s linear infinite;
+			}
+
+			#bg div.right.visible {
+				-moz-animation: bg-right 45s linear infinite;
+				-webkit-animation: bg-right 45s linear infinite;
+				-ms-animation: bg-right 45s linear infinite;
+				animation: bg-right 45s linear infinite;
 			}
 
 				#bg div.visible.top {
@@ -193,22 +210,36 @@
 
 				@media screen and (max-width: 1280px) {
 
-					#bg div.visible {
-						-moz-animation: bg 29.25s linear infinite;
-						-webkit-animation: bg 29.25s linear infinite;
-						-ms-animation: bg 29.25s linear infinite;
-						animation: bg 29.25s linear infinite;
+					#bg div.left.visible {
+						-moz-animation: bg-left 29.25s linear infinite;
+						-webkit-animation: bg-left 29.25s linear infinite;
+						-ms-animation: bg-left 29.25s linear infinite;
+						animation: bg-left 29.25s linear infinite;
+					}
+
+					#bg div.right.visible {
+						-moz-animation: bg-right 29.25s linear infinite;
+						-webkit-animation: bg-right 29.25s linear infinite;
+						-ms-animation: bg-right 29.25s linear infinite;
+						animation: bg-right 29.25s linear infinite;
 					}
 
 				}
 
 				@media screen and (max-width: 736px) {
 
-					#bg div.visible {
-						-moz-animation: bg 18s linear infinite;
-						-webkit-animation: bg 18s linear infinite;
-						-ms-animation: bg 18s linear infinite;
-						animation: bg 18s linear infinite;
+					#bg div.left.visible {
+						-moz-animation: bg-left 18s linear infinite;
+						-webkit-animation: bg-left 18s linear infinite;
+						-ms-animation: bg-left 18s linear infinite;
+						animation: bg-left 18s linear infinite;
+					}
+
+					#bg div.right.visible {
+						-moz-animation: bg-right 18s linear infinite;
+						-webkit-animation: bg-right 18s linear infinite;
+						-ms-animation: bg-right 18s linear infinite;
+						animation: bg-right 18s linear infinite;
 					}
 
 				}
@@ -224,7 +255,7 @@
 			opacity: 0;
 		}
 
-	@-moz-keyframes bg {
+	@-moz-keyframes bg-left {
 		0% {
 			-moz-transform: translateX(0);
 			-webkit-transform: translateX(0);
@@ -233,14 +264,14 @@
 		}
 
 		100% {
-			-moz-transform: translateX(-25%);
-			-webkit-transform: translateX(-25%);
-			-ms-transform: translateX(-25%);
-			transform: translateX(-25%);
+			-moz-transform: translateX(-12.5%);
+			-webkit-transform: translateX(-12.5%);
+			-ms-transform: translateX(-12.5%);
+			transform: translateX(-12.5%);
 		}
 	}
 
-	@-webkit-keyframes bg {
+	@-webkit-keyframes bg-left {
 		0% {
 			-moz-transform: translateX(0);
 			-webkit-transform: translateX(0);
@@ -249,14 +280,14 @@
 		}
 
 		100% {
-			-moz-transform: translateX(-25%);
-			-webkit-transform: translateX(-25%);
-			-ms-transform: translateX(-25%);
-			transform: translateX(-25%);
+			-moz-transform: translateX(-12.5%);
+			-webkit-transform: translateX(-12.5%);
+			-ms-transform: translateX(-12.5%);
+			transform: translateX(-12.5%);
 		}
 	}
 
-	@-ms-keyframes bg {
+	@-ms-keyframes bg-left {
 		0% {
 			-moz-transform: translateX(0);
 			-webkit-transform: translateX(0);
@@ -265,14 +296,14 @@
 		}
 
 		100% {
-			-moz-transform: translateX(-25%);
-			-webkit-transform: translateX(-25%);
-			-ms-transform: translateX(-25%);
-			transform: translateX(-25%);
+			-moz-transform: translateX(-12.5%);
+			-webkit-transform: translateX(-12.5%);
+			-ms-transform: translateX(-12.5%);
+			transform: translateX(-12.5%);
 		}
 	}
 
-	@keyframes bg {
+	@keyframes bg-left {
 		0% {
 			-moz-transform: translateX(0);
 			-webkit-transform: translateX(0);
@@ -281,10 +312,75 @@
 		}
 
 		100% {
-			-moz-transform: translateX(-25%);
-			-webkit-transform: translateX(-25%);
-			-ms-transform: translateX(-25%);
-			transform: translateX(-25%);
+			-moz-transform: translateX(-12.5%);
+			-webkit-transform: translateX(-12.5%);
+			-ms-transform: translateX(-12.5%);
+			transform: translateX(-12.5%);
+		}
+	}
+
+
+	@-moz-keyframes bg-right {
+		0% {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+		}
+
+		100% {
+			-moz-transform: translateX(12.5%);
+			-webkit-transform: translateX(12.5%);
+			-ms-transform: translateX(12.5%);
+			transform: translateX(12.5%);
+		}
+	}
+
+	@-webkit-keyframes bg-right {
+		0% {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+		}
+
+		100% {
+			-moz-transform: translateX(12.5%);
+			-webkit-transform: translateX(12.5%);
+			-ms-transform: translateX(12.5%);
+			transform: translateX(12.5%);
+		}
+	}
+
+	@-ms-keyframes bg-right {
+		0% {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+		}
+
+		100% {
+			-moz-transform: translateX(12.5%);
+			-webkit-transform: translateX(12.5%);
+			-ms-transform: translateX(12.5%);
+			transform: translateX(12.5%);
+		}
+	}
+
+	@keyframes bg-right {
+		0% {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+		}
+
+		100% {
+			-moz-transform: translateX(12.5%);
+			-webkit-transform: translateX(12.5%);
+			-ms-transform: translateX(12.5%);
+			transform: translateX(12.5%);
 		}
 	}
 
@@ -351,7 +447,7 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #1cb495 !important;
+			color: yellow !important;
 			text-decoration: none;
 		}
 

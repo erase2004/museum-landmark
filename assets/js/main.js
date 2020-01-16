@@ -39,37 +39,118 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'images/25.png': '70% 40%',
-							'images/26.jpg': '50% 5%',
-							'images/27.jpg': '70% 20%',
-							'images/22.jpg': '70% 7%',
-							'images/23.jpg': '50% 10%',
-							'images/24.jpg': '70% 20%',
-							'images/19.png': '50% 10%',
-							'images/20.png': '50% 15%',
-							'images/21.png': '70% 40%',
-							'images/16.png': '50% 15%',
-							'images/17.png': '70% 25%',
-							'images/18.png': '50% 35%',
-							'images/13.png': '50% 20%',
-							'images/14.png': '50% 15%',
-							'images/15.png': '70% 15%',
-							'images/10.jpg': '50% 10%',
-							'images/11.png': '60% 15%',
-							'images/12.jpg': '70% 10%',
-							'images/07.png': '50% 10%',
-							'images/08.jpg': '60% 20%',
-							'images/09.jpg': '70% 30%',
-							'images/04.jpg': '60% 10%',
-							'images/05.jpg': '30% 50%',
-							'images/06.png': '40% 20%',
-							'images/01.jpg': '50% 10%',
-							'images/02.gif': 'top',
-							'images/03.jpg': '80% 25%'
+							'images/25.png': {
+								'position': '0% 40%',
+								'direction': 'left'
+							},
+							'images/26.jpg': {
+								'position': '0% 25%',
+								'direction': 'left'
+							},
+							'images/27.jpg': {
+								'position': 'right 70% top 15%',
+								'direction': 'right'
+							},
+							'images/22.jpg': {
+								'position': 'left 70% top 0%',
+								'direction': 'left'
+							},
+							'images/23.jpg': {
+								'position': 'right 70% top 0%',
+								'direction': 'right'
+							},
+							'images/24.jpg': {
+								'position': '70% 10%',
+								'direction': 'left'
+							},
+							'images/19.png': {
+								'position': '50% 5%',
+								'direction': 'left'
+							},
+							'images/20.png': {
+								'position': 'right 70% top 10%',
+								'direction': 'right'
+							},
+							'images/21.png': {
+								'position': 'right 80% top 40%',
+								'direction': 'right'
+							},
+							'images/16.png': {
+								'position': 'right 70% top 15%',
+								'direction': 'right'
+							},
+							'images/17.png': {
+								'position': '70% 25%',
+								'direction': 'left'
+							},
+							'images/18.png': {
+								'position': '50% 30%',
+								'direction': 'left'
+							},
+							'images/13.png': {
+								'position': '70% 20%',
+								'direction': 'left'
+							},
+							'images/14.png': {
+								'position': '50% 10%',
+								'direction': 'left'
+							},
+							'images/15.png': {
+								'position': 'right 70% top 15%',
+								'direction': 'right'
+							},
+							'images/10.jpg': {
+								'position': '50% 10%',
+								'direction': 'left'
+							},
+							'images/11.png': {
+								'position': '60% 15%',
+								'direction': 'left'
+							},
+							'images/12.jpg': {
+								'position': '70% 10%',
+								'direction': 'left'
+							},
+							'images/07.png': {
+								'position': 'right 80% top 10%',
+								'direction': 'right'
+							},
+							'images/08.jpg': {
+								'position': 'right 60% top 15%',
+								'direction': 'right'
+							},
+							'images/09.jpg': {
+								'position': '70% 30%',
+								'direction': 'left'
+							},
+							'images/04.png': {
+								'position': '60% 10%',
+								'direction': 'left'
+							},
+							'images/05.jpg': {
+								'position': 'right 35% top 40%',
+								'direction': 'right'
+							},
+							'images/06.png': {
+								'position': '40% 15%',
+								'direction': 'left'
+							},
+							'images/01.jpg': {
+								'position': '50% 10%',
+								'direction': 'left'
+							},
+							'images/02.gif': {
+								'position': 'top',
+								'direction': 'left'
+							},
+							'images/03.jpg': {
+								'position': '80% 25%',
+								'direction': 'left'
+							},
 						},
 
 					// Delay.
-						delay: 6000
+						delay: 7000
 
 				};
 
@@ -88,7 +169,8 @@
 					// Create BG.
 						$bg = document.createElement('div');
 							$bg.style.backgroundImage = 'url("' + k + '")';
-							$bg.style.backgroundPosition = settings.images[k];
+							$bg.style.backgroundPosition = settings.images[k].position;
+							$bg.classList.add(settings.images[k].direction);
 							$wrapper.appendChild($bg);
 
 					// Add it to array.
