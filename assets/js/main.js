@@ -47,11 +47,11 @@
 								'position': '40% 10%',
 								'direction': 'left'
 							},
-							'images/39.png': {
+							'images/39.jpg': {
 								'position': 'right 20% top 10%',
 								'direction': 'left'
 							},
-							'images/31.png': {
+							'images/31.jpg': {
 								'position': 'right 70% top 10%',
 								'direction': 'right'
 							},
@@ -59,7 +59,7 @@
 								'position': '10% 50%',
 								'direction': 'left'
 							},
-							'images/33.png': {
+							'images/33.jpg': {
 								'position': 'left 0% top 0%',
 								'direction': 'right'
 							},
@@ -67,7 +67,7 @@
 								'position': 'right 70% top 15%',
 								'direction': 'right'
 							},
-							'images/29.png': {
+							'images/29.jpg': {
 								'position': '0% 60%',
 								'direction': 'left'
 							},
@@ -99,11 +99,11 @@
 								'position': '70% 10%',
 								'direction': 'left'
 							},
-							'images/19.png': {
+							'images/19.jpg': {
 								'position': '50% 5%',
 								'direction': 'left'
 							},
-							'images/20.png': {
+							'images/20.jpg': {
 								'position': 'right 70% top 10%',
 								'direction': 'right'
 							},
@@ -111,15 +111,15 @@
 								'position': 'right 80% top 40%',
 								'direction': 'right'
 							},
-							'images/16.png': {
+							'images/16.jpg': {
 								'position': 'right 70% top 15%',
 								'direction': 'right'
 							},
-							'images/17.png': {
+							'images/17.jpg': {
 								'position': '70% 25%',
 								'direction': 'left'
 							},
-							'images/18.png': {
+							'images/18.jpg': {
 								'position': '50% 30%',
 								'direction': 'left'
 							},
@@ -139,7 +139,7 @@
 								'position': '50% 10%',
 								'direction': 'left'
 							},
-							'images/11.png': {
+							'images/11.jpg': {
 								'position': '60% 15%',
 								'direction': 'left'
 							},
@@ -147,7 +147,7 @@
 								'position': '70% 10%',
 								'direction': 'left'
 							},
-							'images/07.png': {
+							'images/07.jpg': {
 								'position': 'right 80% top 10%',
 								'direction': 'right'
 							},
@@ -167,7 +167,7 @@
 								'position': 'right 35% top 40%',
 								'direction': 'right'
 							},
-							'images/06.png': {
+							'images/06.jpg': {
 								'position': '40% 15%',
 								'direction': 'left'
 							},
