@@ -39,6 +39,18 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
+							'images/37.jpg': {
+								'position': 'right 70% top 20%',
+								'direction': 'right'
+							},
+							'images/38.jpg': {
+								'position': '40% 10%',
+								'direction': 'left'
+							},
+							'images/39.png': {
+								'position': 'right 20% top 10%',
+								'direction': 'left'
+							},
 							'images/31.png': {
 								'position': 'right 70% top 10%',
 								'direction': 'right'
