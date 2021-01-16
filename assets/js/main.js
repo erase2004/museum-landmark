@@ -191,7 +191,7 @@
 				};
 
 			// Vars.
-				var	pos = 0, lastPos = 0,
+				var	pos = 0, lastPos = 0, nextPos = 1, preload = 3,
 					$wrapper, $bgs = [], $bg,
 					k, v;
 
@@ -204,15 +204,21 @@
 
 					// Create BG.
 						$bg = document.createElement('div');
+						if (pos < preload) {
 							$bg.style.backgroundImage = 'url("' + k + '")';
-							$bg.style.backgroundPosition = settings.images[k].position;
-							$bg.classList.add(settings.images[k].direction);
-							$wrapper.appendChild($bg);
+						}
+						$bg.style.backgroundPosition = settings.images[k].position;
+						$bg.classList.add(settings.images[k].direction);
+						$bg.setAttribute('data-src', 'url("' + k + '")');
+						$wrapper.appendChild($bg);
 
 					// Add it to array.
 						$bgs.push($bg);
 
+						pos++;
 				}
+
+				pos = 0;
 
 			// Main loop.
 				$bgs[pos].classList.add('visible');
@@ -226,7 +232,8 @@
 				window.setInterval(function() {
 
 					lastPos = pos;
-					pos++;
+					pos = (pos + 1) % $bgs.length;
+					nextPos = (nextPos + 1) % $bgs.length;
 
 					// Wrap to beginning if necessary.
 						if (pos >= $bgs.length)
@@ -236,6 +243,7 @@
 						$bgs[lastPos].classList.remove('top');
 						$bgs[pos].classList.add('visible');
 						$bgs[pos].classList.add('top');
+						$bgs[nextPos].style.backgroundImage = $bgs[nextPos].getAttribute('data-src');
 
 					// Hide last image after a short delay.
 						window.setTimeout(function() {
