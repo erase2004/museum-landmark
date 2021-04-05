@@ -39,6 +39,18 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
+							'images/40.gif': {
+								'position': 'left 50% top 0%',
+								'direction': 'right'
+							},
+							'images/41.jpg': {
+								'position': '50% 10%',
+								'direction': 'left'
+							},
+							'images/42.jpg': {
+								'position': 'right 50% top 10%',
+								'direction': 'left'
+							},
 							'images/37.jpg': {
 								'position': 'right 70% top 20%',
 								'direction': 'right'
@@ -232,7 +244,7 @@
 				window.setInterval(function() {
 
 					lastPos = pos;
-					pos = (pos + 1) % $bgs.length;
+					pos = nextPos;
 					nextPos = (nextPos + 1) % $bgs.length;
 
 					// Wrap to beginning if necessary.
