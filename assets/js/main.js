@@ -39,6 +39,18 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
+							'images/49.jpg': {
+								'position': 'left 50% top 0%',
+								'direction': 'left'
+							},
+							'images/50.jpg': {
+								'position': 'right 0% top 0%',
+								'direction': 'left'
+							},
+							'images/51.jpg': {
+								'position': 'right 0% top 20%',
+								'direction': 'left'
+							},
 							'images/46.jpg': {
 								'position': 'left 50% top 0%',
 								'direction': 'left'
@@ -245,6 +257,7 @@
 						}
 						$bg.style.backgroundPosition = settings.images[k].position;
 						$bg.classList.add(settings.images[k].direction);
+						$bg.draggable = true;
 						$bg.setAttribute('data-src', 'url("' + k + '")');
 						$wrapper.appendChild($bg);
 
