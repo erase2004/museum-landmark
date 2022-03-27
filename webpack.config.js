@@ -1,9 +1,6 @@
 const path = require('path')
-const glob = require('glob-all')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const PurgecssPlugin = require('purgecss-webpack-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/js/main.js',
@@ -18,15 +15,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css'
-    }),
-    new PurgecssPlugin({
-      paths: () => glob.sync([
-        path.join(__dirname, 'index.html'),
-        path.join(__dirname, 'src', '**', '*')
-      ], { nodir: true })
-    })
+    new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin()
   ],
   module: {
     rules: [
@@ -34,7 +24,8 @@ module.exports = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader'
+          'css-loader',
+          'postcss-loader'
         ]
       },
       {
@@ -47,15 +38,6 @@ module.exports = {
           }
         }
       }
-    ]
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        extractComments: false
-      }),
-      new OptimizeCssAssetsPlugin()
     ]
   }
 }
