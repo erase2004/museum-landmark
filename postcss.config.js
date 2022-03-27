@@ -5,7 +5,7 @@ module.exports = {
     require('postcss-import'),
     require('autoprefixer'),
     purgecss({
-      content: ['index.html', 'src/**/*.js'],
+      content: ['src/index.html', 'src/**/*.js'],
       fontFace: true,
       keyframes: true,
       variables: true

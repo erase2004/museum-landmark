@@ -1,6 +1,8 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   entry: './src/js/main.js',
@@ -15,8 +17,26 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/icons/logo.svg',
+      favicons: {
+        icons: {
+          android: { background: '#fff' },
+          appleIcon: { background: '#fff' },
+          appleStartup: { background: '#fff' },
+          coast: false,
+          favicons: { background: '#fff' },
+          firefox: { background: '#fff' },
+          windows: { background: '#fff' },
+          yandex: false
+        }
+      }
+    })
   ],
   module: {
     rules: [
