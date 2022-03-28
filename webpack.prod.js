@@ -14,16 +14,19 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    assetModuleFilename: 'assets/images/[hash][ext][query]'
   },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
+      title: 'ACGN股市歷史博物館',
       template: './src/index.html'
     }),
     new FaviconsWebpackPlugin({
       logo: './src/assets/icons/logo.svg',
+      prefix: 'assets/favicons/',
       favicons: {
         icons: {
           android: { background: '#fff' },
@@ -57,6 +60,10 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
       }
     ]
   }
