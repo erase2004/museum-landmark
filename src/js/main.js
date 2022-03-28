@@ -21,17 +21,14 @@ import '@/css/main.css'
 
       // Images (in the format of 'url': 'alignment').
       images: {
-        /*
         '49.jpg': {
           position: 'left 50% top 0%',
           direction: 'left'
-        }
-        */
+        },
         '50.jpg': {
           position: 'right 0% top 0%',
           direction: 'left'
-        }
-        /*
+        },
         '51.jpg': {
           position: 'right 0% top 20%',
           direction: 'left'
@@ -216,7 +213,6 @@ import '@/css/main.css'
           position: '80% 25%',
           direction: 'left'
         }
-        */
       },
 
       // Delay.
