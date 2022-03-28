@@ -21,23 +21,23 @@ import '@/css/main.css'
 
       // Images (in the format of 'url': 'alignment').
       images: {
-        '49.jpg': {
+        '49.jpeg': {
           position: 'left 50% top 0%',
           direction: 'left'
         },
-        '50.jpg': {
+        '50.png': {
           position: 'right 0% top 0%',
           direction: 'left'
         },
-        '51.jpg': {
+        '51.png': {
           position: 'right 0% top 20%',
           direction: 'left'
         },
-        '46.jpg': {
+        '46.jpeg': {
           position: 'left 50% top 0%',
           direction: 'left'
         },
-        '47.jpg': {
+        '47.png': {
           position: 'right 20% top 0%',
           direction: 'left'
         },
@@ -45,11 +45,11 @@ import '@/css/main.css'
           position: 'left 50% top 0%',
           direction: 'right'
         },
-        '43.jpg': {
+        '43.png': {
           position: 'left 50% top 0%',
           direction: 'left'
         },
-        '44.jpg': {
+        '44.jpeg': {
           position: 'left 50% top 0%',
           direction: 'left'
         },
@@ -61,43 +61,43 @@ import '@/css/main.css'
           position: 'left 50% top 0%',
           direction: 'right'
         },
-        '41.jpg': {
+        '41.png': {
           position: '50% 10%',
           direction: 'left'
         },
-        '42.jpg': {
+        '42.jpeg': {
           position: 'right 50% top 10%',
           direction: 'left'
         },
-        '37.jpg': {
+        '37.jpeg': {
           position: 'right 70% top 20%',
           direction: 'right'
         },
-        '38.jpg': {
+        '38.jpeg': {
           position: '40% 10%',
           direction: 'left'
         },
-        '39.jpg': {
+        '39.png': {
           position: 'right 20% top 10%',
           direction: 'left'
         },
-        '31.jpg': {
+        '31.png': {
           position: 'right 70% top 10%',
           direction: 'right'
         },
-        '32.jpg': {
+        '32.jpeg': {
           position: '10% 50%',
           direction: 'left'
         },
-        '33.jpg': {
+        '33.png': {
           position: 'left 0% top 0%',
           direction: 'right'
         },
-        '28.jpg': {
+        '28.jpeg': {
           position: 'right 70% top 15%',
           direction: 'right'
         },
-        '29.jpg': {
+        '29.png': {
           position: '0% 60%',
           direction: 'left'
         },
@@ -109,15 +109,15 @@ import '@/css/main.css'
           position: '0% 40%',
           direction: 'left'
         },
-        '26.jpg': {
+        '26.jpeg': {
           position: '0% 25%',
           direction: 'left'
         },
-        '27.jpg': {
+        '27.jpeg': {
           position: 'right 70% top 15%',
           direction: 'right'
         },
-        '22.jpg': {
+        '22.jpeg': {
           position: 'left 70% top 0%',
           direction: 'left'
         },
@@ -125,31 +125,31 @@ import '@/css/main.css'
           position: 'right 70% top 0%',
           direction: 'right'
         },
-        '24.jpg': {
+        '24.jpeg': {
           position: '70% 10%',
           direction: 'left'
         },
-        '19.jpg': {
+        '19.png': {
           position: '50% 5%',
           direction: 'left'
         },
-        '20.jpg': {
+        '20.png': {
           position: 'right 70% top 10%',
           direction: 'right'
         },
-        '21.png': {
+        '21.jpeg': {
           position: 'right 80% top 40%',
           direction: 'right'
         },
-        '16.jpg': {
+        '16.png': {
           position: 'right 70% top 15%',
           direction: 'right'
         },
-        '17.jpg': {
+        '17.png': {
           position: '70% 25%',
           direction: 'left'
         },
-        '18.jpg': {
+        '18.png': {
           position: '50% 30%',
           direction: 'left'
         },
@@ -165,27 +165,27 @@ import '@/css/main.css'
           position: 'right 70% top 15%',
           direction: 'right'
         },
-        '10.jpg': {
+        '10.jpeg': {
           position: '50% 10%',
           direction: 'left'
         },
-        '11.jpg': {
+        '11.png': {
           position: '60% 15%',
           direction: 'left'
         },
-        '12.jpg': {
+        '12.jpeg': {
           position: '70% 10%',
           direction: 'left'
         },
-        '07.jpg': {
+        '07.png': {
           position: 'right 80% top 10%',
           direction: 'right'
         },
-        '08.jpg': {
+        '08.jpeg': {
           position: 'right 60% top 15%',
           direction: 'right'
         },
-        '09.jpg': {
+        '09.jpeg': {
           position: '70% 30%',
           direction: 'left'
         },
@@ -193,15 +193,15 @@ import '@/css/main.css'
           position: '60% 10%',
           direction: 'left'
         },
-        '05.jpg': {
+        '05.jpeg': {
           position: 'right 35% top 40%',
           direction: 'right'
         },
-        '06.jpg': {
+        '06.png': {
           position: '40% 15%',
           direction: 'left'
         },
-        '01.jpg': {
+        '01.jpeg': {
           position: '50% 10%',
           direction: 'left'
         },

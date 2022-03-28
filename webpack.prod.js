@@ -63,7 +63,31 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource',
+        use: [
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true
+              },
+              optipng: {
+                enabled: false
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 3,
+                strip: true
+              },
+              gifsicle: {
+                enabled: false
+              },
+              webp: {
+                quality: 75
+              }
+            }
+          }
+        ]
       }
     ]
   }
