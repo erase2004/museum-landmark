@@ -97,6 +97,8 @@ body.is-loading *::after {
 
 #bg div {
   transition: opacity 1.5s ease;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   height: 100%;
   opacity: 0;

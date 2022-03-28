@@ -21,198 +21,202 @@ import '@/css/main.css'
 
       // Images (in the format of 'url': 'alignment').
       images: {
-        'images/49.jpg': {
+        /*
+        '49.jpg': {
           position: 'left 50% top 0%',
           direction: 'left'
-        },
-        'images/50.jpg': {
+        }
+        */
+        '50.jpg': {
           position: 'right 0% top 0%',
           direction: 'left'
-        },
-        'images/51.jpg': {
+        }
+        /*
+        '51.jpg': {
           position: 'right 0% top 20%',
           direction: 'left'
         },
-        'images/46.jpg': {
+        '46.jpg': {
           position: 'left 50% top 0%',
           direction: 'left'
         },
-        'images/47.jpg': {
+        '47.jpg': {
           position: 'right 20% top 0%',
           direction: 'left'
         },
-        'images/48.jpg': {
+        '48.jpg': {
           position: 'left 50% top 0%',
           direction: 'right'
         },
-        'images/43.jpg': {
+        '43.jpg': {
           position: 'left 50% top 0%',
           direction: 'left'
         },
-        'images/44.jpg': {
+        '44.jpg': {
           position: 'left 50% top 0%',
           direction: 'left'
         },
-        'images/45.jpg': {
+        '45.jpg': {
           position: 'left 50% top 0%',
           direction: 'right'
         },
-        'images/40.gif': {
+        '40.gif': {
           position: 'left 50% top 0%',
           direction: 'right'
         },
-        'images/41.jpg': {
+        '41.jpg': {
           position: '50% 10%',
           direction: 'left'
         },
-        'images/42.jpg': {
+        '42.jpg': {
           position: 'right 50% top 10%',
           direction: 'left'
         },
-        'images/37.jpg': {
+        '37.jpg': {
           position: 'right 70% top 20%',
           direction: 'right'
         },
-        'images/38.jpg': {
+        '38.jpg': {
           position: '40% 10%',
           direction: 'left'
         },
-        'images/39.jpg': {
+        '39.jpg': {
           position: 'right 20% top 10%',
           direction: 'left'
         },
-        'images/31.jpg': {
+        '31.jpg': {
           position: 'right 70% top 10%',
           direction: 'right'
         },
-        'images/32.jpg': {
+        '32.jpg': {
           position: '10% 50%',
           direction: 'left'
         },
-        'images/33.jpg': {
+        '33.jpg': {
           position: 'left 0% top 0%',
           direction: 'right'
         },
-        'images/28.jpg': {
+        '28.jpg': {
           position: 'right 70% top 15%',
           direction: 'right'
         },
-        'images/29.jpg': {
+        '29.jpg': {
           position: '0% 60%',
           direction: 'left'
         },
-        'images/30.png': {
+        '30.png': {
           position: 'left 0% top 0%',
           direction: 'right'
         },
-        'images/25.png': {
+        '25.png': {
           position: '0% 40%',
           direction: 'left'
         },
-        'images/26.jpg': {
+        '26.jpg': {
           position: '0% 25%',
           direction: 'left'
         },
-        'images/27.jpg': {
+        '27.jpg': {
           position: 'right 70% top 15%',
           direction: 'right'
         },
-        'images/22.jpg': {
+        '22.jpg': {
           position: 'left 70% top 0%',
           direction: 'left'
         },
-        'images/23.jpg': {
+        '23.jpg': {
           position: 'right 70% top 0%',
           direction: 'right'
         },
-        'images/24.jpg': {
+        '24.jpg': {
           position: '70% 10%',
           direction: 'left'
         },
-        'images/19.jpg': {
+        '19.jpg': {
           position: '50% 5%',
           direction: 'left'
         },
-        'images/20.jpg': {
+        '20.jpg': {
           position: 'right 70% top 10%',
           direction: 'right'
         },
-        'images/21.png': {
+        '21.png': {
           position: 'right 80% top 40%',
           direction: 'right'
         },
-        'images/16.jpg': {
+        '16.jpg': {
           position: 'right 70% top 15%',
           direction: 'right'
         },
-        'images/17.jpg': {
+        '17.jpg': {
           position: '70% 25%',
           direction: 'left'
         },
-        'images/18.jpg': {
+        '18.jpg': {
           position: '50% 30%',
           direction: 'left'
         },
-        'images/13.png': {
+        '13.png': {
           position: '70% 20%',
           direction: 'left'
         },
-        'images/14.png': {
+        '14.png': {
           position: '50% 10%',
           direction: 'left'
         },
-        'images/15.png': {
+        '15.png': {
           position: 'right 70% top 15%',
           direction: 'right'
         },
-        'images/10.jpg': {
+        '10.jpg': {
           position: '50% 10%',
           direction: 'left'
         },
-        'images/11.jpg': {
+        '11.jpg': {
           position: '60% 15%',
           direction: 'left'
         },
-        'images/12.jpg': {
+        '12.jpg': {
           position: '70% 10%',
           direction: 'left'
         },
-        'images/07.jpg': {
+        '07.jpg': {
           position: 'right 80% top 10%',
           direction: 'right'
         },
-        'images/08.jpg': {
+        '08.jpg': {
           position: 'right 60% top 15%',
           direction: 'right'
         },
-        'images/09.jpg': {
+        '09.jpg': {
           position: '70% 30%',
           direction: 'left'
         },
-        'images/04.png': {
+        '04.png': {
           position: '60% 10%',
           direction: 'left'
         },
-        'images/05.jpg': {
+        '05.jpg': {
           position: 'right 35% top 40%',
           direction: 'right'
         },
-        'images/06.jpg': {
+        '06.jpg': {
           position: '40% 15%',
           direction: 'left'
         },
-        'images/01.jpg': {
+        '01.jpg': {
           position: '50% 10%',
           direction: 'left'
         },
-        'images/02.gif': {
+        '02.gif': {
           position: 'top',
           direction: 'left'
         },
-        'images/03.jpg': {
+        '03.jpg': {
           position: '80% 25%',
           direction: 'left'
         }
+        */
       },
 
       // Delay.
@@ -232,16 +236,17 @@ import '@/css/main.css'
     $wrapper.id = 'bg'
     $body.appendChild($wrapper)
 
-    for (const k in settings.images) {
+    for (const image in settings.images) {
       // Create BG.
       $bg = document.createElement('div')
+
       if (pos < preload) {
-        $bg.style.backgroundImage = 'url("' + k + '")'
+        $bg.style.backgroundImage = `url(${require('@/assets/images/' + image)})`
       }
-      $bg.style.backgroundPosition = settings.images[k].position
-      $bg.classList.add(settings.images[k].direction)
+      $bg.style.backgroundPosition = settings.images[image].position
+      $bg.classList.add(settings.images[image].direction)
       $bg.draggable = true
-      $bg.setAttribute('data-src', 'url("' + k + '")')
+      $bg.setAttribute('data-src', `url(${require('@/assets/images/' + image)})`)
       $wrapper.appendChild($bg)
 
       // Add it to array.
