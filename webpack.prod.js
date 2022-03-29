@@ -28,9 +28,6 @@ module.exports = {
       templateParameters: {
         siteList,
         imageList
-      },
-      meta: {
-        content: 'width=device-width, initial-scale=1, user-scalable=no'
       }
     }),
     new FaviconsWebpackPlugin({
