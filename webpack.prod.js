@@ -30,7 +30,6 @@ module.exports = {
         imageList
       },
       meta: {
-        charset: 'utf-8',
         content: 'width=device-width, initial-scale=1, user-scalable=no'
       }
     }),
