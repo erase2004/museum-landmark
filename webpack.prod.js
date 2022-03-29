@@ -3,6 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const siteList = require('./src/js/siteList')
+const imageList = require('./src/js/imageList')
 
 module.exports = {
   entry: './src/js/main.js',
@@ -22,11 +24,19 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       title: 'ACGN股市歷史博物館',
-      template: './src/index.html'
+      template: './src/index.html',
+      templateParameters: {
+        siteList,
+        imageList
+      },
+      meta: {
+        charset: 'utf-8',
+        content: 'width=device-width, initial-scale=1, user-scalable=no'
+      }
     }),
     new FaviconsWebpackPlugin({
       logo: './src/assets/icons/logo.svg',
-      prefix: 'assets/favicons/',
+      prefix: 'assets/icons/',
       favicons: {
         icons: {
           android: { background: '#fff' },

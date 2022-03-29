@@ -4,7 +4,8 @@ module.exports = {
     node: true
   },
   plugins: [
-    'html'
+    'html',
+    'tailwindcss'
   ],
   extends: [
     'standard'

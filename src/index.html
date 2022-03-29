@@ -1,35 +1,107 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body>
-    <!-- Header -->
-    <header id="header">
-      <h1>ACGN股市歷史博物館</h1>
-    </header>
+  <body class="flex flex-col flex-nowrap bg-orange-800">
+    <!-- nav -->
+    <nav class="fixed w-full border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-800">
+      <div class="container flex flex-wrap justify-between items-center mx-auto">
+        <!-- logo, title -->
+        <a href="#" class="flex items-center">
+          <img src="<%= require('@/assets/icons/logo.png') %>" class="mr-3 h-6 md:h-9 bg-white" alt="Museum Logo" />
+          <span class="self-center text-xl font-semibold whitespace-nowrap text-white"><%= htmlWebpackPlugin.options.title %></span>
+        </a>
+        <!-- mobile menu toggle -->
+        <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm rounded-md md:hidden focus:outline-none focus:ring-1 text-gray-400 hover:bg-gray-700 focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+          <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto border-t border-solid border-gray-600 md:border-0" id="mobile-menu">
+          <ul class="flex flex-col md:flex-row md:space-x-1 md:text-sm md:font-medium">
+            <% for (const [year, list] of Object.entries(siteList).reverse()) { %>
+            <li>
+              <div class="block md:hidden">
+                <button type="button" class="accordion-header" data-accordion-target="#accordion-collapse-body-<%= year %>" aria-expanded="true" aria-controls="accordion-collapse-body-<%= year %>">
+                  <span><%= year %></span>
+                  <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div id="accordion-collapse-body-<%= year %>" class="hidden" aria-labelledby="accordion-collapse-heading-<%= year %>">
+                  <div class="accordion-content">
+                    <ul class="flex flex-col">
+                      <% for (const site of list) { %>
+                      <li>
+                        <% if (site.disabled) { %>
+                        <a href="#" class="accordion-link link-disabled" disabled>
+                        <% } else { %>
+                        <a href="<%= site.url %>" class="accordion-link" target="_blank">
+                        <% } %>
+                          <%= site.title %>
+                        </a>
+                      </li>
+                      <% } %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="hidden md:block">
+                <button data-dropdown-toggle="dropdown-<%= year %>" class="dropdown-button">
+                  <%= year %>
+                  <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdown-<%= year %>" class="dropdown-menu">
+                  <ul class="dropdown-link-group" aria-labelledby="dropdown-<%= year %>">
+                    <% for (const site of list) { %>
+                    <li>
+                      <% if (site.disabled) { %>
+                      <a href="#" class="dropdown-link link-disabled" disabled>
+                      <% } else { %>
+                      <a href="<%= site.url %>" class="dropdown-link" target="_blank">
+                      <% } %>
+                        <%= site.title %>
+                      </a>
+                    </li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <!-- Site Navigation -->
-    <div class="link-container">
-      <a href="https://r17-museum.acgn-stock.com">(ρ) 2021/10/03 ~ 2022/01/02</a>
-      <a href="https://r16-museum.acgn-stock.com">(π) 2021/07/04 ~ 2021/10/03</a>
-      <a href="https://r15-museum.acgn-stock.com">(ο) 2021/04/04 ~ 2021/07/04</a>
-      <a href="https://r14-museum.acgn-stock.com">(ξ) 2021/01/03 ~ 2021/04/04</a>
-      <a href="https://r13-museum.acgn-stock.com">(ν) 2020/10/04 ~ 2021/01/03</a>
-      <a href="#" disabled>(μ) 2020/07/05 ~ 2020/10/04 (資料遺失)</a>
-      <a href="https://r11-museum.acgn-stock.com">(λ) 2020/04/05 ~ 2020/07/05</a>
-      <a href="https://r10-museum.acgn-stock.com">(κ) 2020/01/05 ~ 2020/04/05</a>
-      <a href="https://r9-museum.acgn-stock.com">(ι) 2019/10/06 ~ 2020/01/05</a>
-      <a href="https://r8-museum.acgn-stock.com">(θ) 2019/07/07 ~ 2019/10/06</a>
-      <a href="https://r7-museum.acgn-stock.com">(η) 2019/04/07 ~ 2019/07/07</a>
-      <a href="https://r6-museum.acgn-stock.com">(ζ) 2019/01/06 ~ 2019/04/07</a>
-      <a href="https://r5-museum.acgn-stock.com">(ε) 2018/10/07 ~ 2019/01/06</a>
-      <a href="https://r4-museum.acgn-stock.com">(δ) 2018/07/08 ~ 2018/10/07</a>
-      <a href="https://r3-museum.acgn-stock.com">(γ) 2018/04/08 ~ 2018/07/08</a>
-      <a href="https://r2-museum.acgn-stock.com">(β) 2018/01/07 ~ 2018/04/08</a>
-      <a href="https://r1-museum.acgn-stock.com">(α) 2017/09/15 ~ 2017/12/31</a>
+    <div class="mt-10 md:px-4">
+      <% let indicate = 0; %>
+      <% for (const [year, list] of Object.entries(imageList).reverse()) { %>
+        <div class="text-xl text-center py-2 text-gray-300">
+          <%= Math.floor(year / 100) %> 年 <%= year % 100 %> 期
+        </div>
+        <% let index = 0; %>
+        <% for (const image of list) { %>
+          <% if (index === 0 ) { %>
+          <!-- first place -->
+          <a class="block border-8 border-solid border-yellow-500 rounded-md" href="<%= image.url %>" target="_blank">
+          <% } else if (index === 1) { %>
+          <!-- second place -->
+          <a class="block border-8 border-solid border-neutral-500 rounded-md" href="<%= image.url %>" target="_blank">
+          <% } else { %>
+          <!-- third place -->
+          <a class="block border-8 border-solid border-lime-800 rounded-md" href="<%= image.url %>" target="_blank">
+          <% } %>
+            <% if (indicate === 0) { %>
+              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image" data-src="<%= require('@/assets/images/' + image.name) %>" src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;">
+            <% } else { %>
+              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image" data-src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;">
+            <% } %>
+          </a>
+          <% index += 1; %>
+        <% } %>
+        <% indicate += 1; %>
+      <% } %>
     </div>
   </body>
 </html>

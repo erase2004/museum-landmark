@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const siteList = require('./src/js/siteList')
+const imageList = require('./src/js/imageList')
 
 module.exports = {
   entry: './src/js/main.js',
@@ -11,7 +13,7 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public')
+      directory: path.join(__dirname, 'src')
     },
     compress: true,
     port: 9000
@@ -32,6 +34,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: '[DEV] ACGN股市歷史博物館',
       template: './src/index.html',
+      templateParameters: {
+        siteList,
+        imageList
+      },
+      meta: {
+        charset: 'utf-8',
+        content: 'width=device-width, initial-scale=1, user-scalable=no'
+      },
       alwaysWriteToDisk: true
     }),
     new HtmlWebpackHarddiskPlugin({
@@ -39,7 +49,7 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin({
       logo: './src/assets/icons/logo.svg',
-      prefix: 'assets/favicons/'
+      prefix: 'assets/icons/'
     })
   ],
   module: {

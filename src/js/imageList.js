@@ -1,0 +1,18 @@
+module.exports = {
+  202104: require('./imageListData/202104'),
+  202103: require('./imageListData/202103'),
+  202102: require('./imageListData/202102'),
+  202101: require('./imageListData/202101'),
+  202004: require('./imageListData/202004'),
+  202002: require('./imageListData/202002'),
+  202001: require('./imageListData/202001'),
+  201904: require('./imageListData/201904'),
+  201903: require('./imageListData/201903'),
+  201902: require('./imageListData/201902'),
+  201901: require('./imageListData/201901'),
+  201804: require('./imageListData/201804'),
+  201803: require('./imageListData/201803'),
+  201802: require('./imageListData/201802'),
+  201801: require('./imageListData/201801'),
+  201704: require('./imageListData/201704')
+}
