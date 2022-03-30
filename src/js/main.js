@@ -67,6 +67,14 @@ import siteList from '@/js/siteList';
     const lazyloadImages = document.querySelectorAll('img.lazy-image')
     let lazyloadThrottleTimeout
 
+    function imageLoadedHandle () {
+      this.classList.remove('image-loading')
+    }
+
+    lazyloadImages.forEach((element) => {
+      element.addEventListener('load', imageLoadedHandle)
+    })
+
     function lazyload () {
       if (lazyloadThrottleTimeout) {
         clearTimeout(lazyloadThrottleTimeout)

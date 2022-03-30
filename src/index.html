@@ -4,15 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <script type="text/javascript">
-      function imageLoadedHandle (element) {
-        element.classList.remove('image-loading')
-      }
-    </script>
   </head>
   <body class="flex flex-col flex-nowrap bg-orange-800">
     <!-- nav -->
-    <nav class="fixed w-full border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-800">
+    <nav class="fixed w-full border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-800 z-50">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
         <!-- logo, title -->
         <a href="#" class="flex items-center">
@@ -100,17 +95,17 @@
           <a class="block border-8 border-solid border-lime-800 rounded-md relative" href="<%= image.url %>" target="_blank">
           <% } %>
             <% if (indicate === 0) { %>
-              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image image-loading" src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;" onload="imageLoadedHandle(this)">
+              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image" src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;">
             <% } else { %>
-              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image image-loading" data-src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;" onload="imageLoadedHandle(this)">
+              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image image-loading" data-src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;">
             <% } %>
             <div class="loading-effect">
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="shadow"></div>
-              <div class="shadow"></div>
-              <div class="shadow"></div>
+              <div class="circle animate-circle-bumping"></div>
+              <div class="circle animate-circle-bumping"></div>
+              <div class="circle animate-circle-bumping"></div>
+              <div class="shadow animate-shadow-transfrom"></div>
+              <div class="shadow animate-shadow-transfrom"></div>
+              <div class="shadow animate-shadow-transfrom"></div>
               <span>圖片載入中</span>
             </div>
           </a>
