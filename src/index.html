@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script type="text/javascript">
+      function imageLoadedHandle (element) {
+        console.log('loaded')
+        element.classList.remove('image-loading')
+      }
+    </script>
   </head>
   <body class="flex flex-col flex-nowrap bg-orange-800">
     <!-- nav -->
@@ -86,19 +92,28 @@
         <% for (const image of list) { %>
           <% if (index === 0 ) { %>
           <!-- first place -->
-          <a class="block border-8 border-solid border-yellow-500 rounded-md" href="<%= image.url %>" target="_blank">
+          <a class="block border-8 border-solid border-yellow-500 rounded-md relative" href="<%= image.url %>" target="_blank">
           <% } else if (index === 1) { %>
           <!-- second place -->
-          <a class="block border-8 border-solid border-neutral-500 rounded-md" href="<%= image.url %>" target="_blank">
+          <a class="block border-8 border-solid border-neutral-500 rounded-md relative" href="<%= image.url %>" target="_blank">
           <% } else { %>
           <!-- third place -->
-          <a class="block border-8 border-solid border-lime-800 rounded-md" href="<%= image.url %>" target="_blank">
+          <a class="block border-8 border-solid border-lime-800 rounded-md relative" href="<%= image.url %>" target="_blank">
           <% } %>
             <% if (indicate === 0) { %>
-              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image" data-src="<%= require('@/assets/images/' + image.name) %>" src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;">
+              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image image-loading" src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;" onload="imageLoadedHandle(this)">
             <% } else { %>
-              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image" data-src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;">
+              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image image-loading" data-src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;" onload="imageLoadedHandle(this)">
             <% } %>
+            <div class="loading-effect">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="shadow"></div>
+              <div class="shadow"></div>
+              <div class="shadow"></div>
+              <span>圖片載入中</span>
+            </div>
           </a>
           <% index += 1; %>
         <% } %>
