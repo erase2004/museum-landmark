@@ -73,11 +73,10 @@ import siteList from '@/js/siteList';
       }
 
       lazyloadThrottleTimeout = setTimeout(function () {
-        const scrollTop = window.pageYOffset
+        const scrollTop = window.scrollY
         lazyloadImages.forEach(function (img) {
-          if (img.offsetTop < (window.innerHeight + scrollTop) && img.src === '') {
+          if (img.offsetTop < (window.innerHeight + scrollTop + 700) && img.src === '') {
             img.src = img.dataset.src
-            img.classList.remove('lazy-image')
           }
         })
         if (lazyloadImages.length === 0) {
@@ -91,5 +90,7 @@ import siteList from '@/js/siteList';
     document.addEventListener('scroll', lazyload)
     window.addEventListener('resize', lazyload)
     window.addEventListener('orientationChange', lazyload)
+
+    lazyload()
   })
 })()

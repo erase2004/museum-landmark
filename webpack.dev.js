@@ -38,7 +38,6 @@ module.exports = {
         siteList,
         imageList
       }
-      alwaysWriteToDisk: true
     }),
     new HtmlWebpackHarddiskPlugin({
       outputPath: path.join(__dirname, 'public')
