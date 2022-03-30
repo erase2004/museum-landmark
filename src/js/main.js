@@ -75,7 +75,8 @@ import siteList from '@/js/siteList';
       lazyloadThrottleTimeout = setTimeout(function () {
         const scrollTop = window.scrollY
         lazyloadImages.forEach(function (img) {
-          if (img.offsetTop < (window.innerHeight + scrollTop + 700) && img.src === '') {
+          // since parentNode of img has been change to position relative, img.offsetTop will always be 0
+          if (img.parentNode.offsetTop < (window.innerHeight + scrollTop + 700) && img.src === '') {
             img.src = img.dataset.src
           }
         })
