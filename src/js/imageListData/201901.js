@@ -3,6 +3,7 @@ const baseUrl = 'https://r6-museum.acgn-stock.com/company/detail'
 module.exports = [
   {
     name: '16.png',
+    companyName: 'クロ',
     width: 2560,
     height: 1440,
     color: '#b9a8a7',
@@ -10,6 +11,7 @@ module.exports = [
   },
   {
     name: '17.png',
+    companyName: '白 雪姫',
     width: 1600,
     height: 900,
     color: '#b2949b',
@@ -17,6 +19,7 @@ module.exports = [
   },
   {
     name: '18.png',
+    companyName: '矢澤日香',
     width: 1300,
     height: 1980,
     color: '#7b595fa2',

@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Landmark page for the Museums of ACGN Stock Market">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body class="flex flex-col flex-nowrap bg-orange-800">
@@ -95,9 +96,21 @@
           <a class="block border-8 border-solid border-lime-800 rounded-md relative" href="<%= image.url %>" target="_blank">
           <% } %>
             <% if (indicate === 0) { %>
-              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image" src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;">
+              <img
+                id="<%= 'image-' + image.name.substring(0,2) %>"
+                class="w-full lazy-image"
+                src="<%= require('@/assets/images/' + image.name) %>"
+                style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
+                alt="<%= image.companyName %>"
+              >
             <% } else { %>
-              <img id="<%= 'image-' + image.name.substring(0,2) %>" class="w-full lazy-image image-loading" data-src="<%= require('@/assets/images/' + image.name) %>" style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;">
+              <img
+                id="<%= 'image-' + image.name.substring(0,2) %>"
+                class="w-full lazy-image image-loading"
+                data-src="<%= require('@/assets/images/' + image.name) %>"
+                style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
+                alt="<%= image.companyName %>"
+              >
             <% } %>
             <div class="loading-effect">
               <div class="circle animate-circle-bumping"></div>

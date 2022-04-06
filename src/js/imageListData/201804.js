@@ -3,6 +3,7 @@ const baseUrl = 'https://r5-museum.acgn-stock.com/company/detail'
 module.exports = [
   {
     name: '13.png',
+    companyName: '泉戸 ましろ',
     width: 747,
     height: 1080,
     color: '#dfb7b5',
@@ -10,6 +11,7 @@ module.exports = [
   },
   {
     name: '14.png',
+    companyName: '小鳥遊 ゆみな',
     width: 787,
     height: 1147,
     color: '#c8b4b3',
@@ -17,6 +19,7 @@ module.exports = [
   },
   {
     name: '15.png',
+    companyName: '星空凜',
     width: 1755,
     height: 1036,
     color: '#e1ced5',

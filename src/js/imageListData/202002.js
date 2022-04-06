@@ -3,6 +3,7 @@ const baseUrl = 'https://r11-museum.acgn-stock.com/company/detail'
 module.exports = [
   {
     name: '31.png',
+    companyName: '真步',
     width: 972,
     height: 697,
     color: '#d8bfc4',
@@ -10,6 +11,7 @@ module.exports = [
   },
   {
     name: '32.jpeg',
+    companyName: '西木野真姬',
     width: 2549,
     height: 1812,
     color: '#615262',
@@ -17,6 +19,7 @@ module.exports = [
   },
   {
     name: '33.png',
+    companyName: 'アイシア',
     width: 1280,
     height: 720,
     color: '#6d88c4',

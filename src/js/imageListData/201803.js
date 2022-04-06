@@ -3,6 +3,7 @@ const baseUrl = 'https://r4-museum.acgn-stock.com/company/detail'
 module.exports = [
   {
     name: '10.jpeg',
+    companyName: 'ファルサリア',
     width: 640,
     height: 512,
     color: '#d5cbe2',
@@ -10,6 +11,7 @@ module.exports = [
   },
   {
     name: '11.png',
+    companyName: '園田海未',
     width: 2237,
     height: 3000,
     color: '#cacfdd',
@@ -17,6 +19,7 @@ module.exports = [
   },
   {
     name: '12.jpeg',
+    companyName: '近江 小々路',
     width: 1280,
     height: 720,
     color: '#d1b2a2',

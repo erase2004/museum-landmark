@@ -3,6 +3,7 @@ const baseUrl = 'https://r13-museum.acgn-stock.com/company/detail'
 module.exports = [
   {
     name: '37.jpeg',
+    companyName: '久遠',
     width: 837,
     height: 1280,
     color: '#bbb4b2',
@@ -10,6 +11,7 @@ module.exports = [
   },
   {
     name: '38.jpeg',
+    companyName: '夜羽',
     width: 900,
     height: 1020,
     color: '#87778a',
@@ -17,6 +19,7 @@ module.exports = [
   },
   {
     name: '39.png',
+    companyName: '琴音',
     width: 800,
     height: 602,
     color: '#747779',
