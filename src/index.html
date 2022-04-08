@@ -12,7 +12,7 @@
       <div class="container flex flex-wrap justify-between items-center mx-auto">
         <!-- logo, title -->
         <a href="#" class="flex items-center">
-          <img src="<%= require('@/assets/icons/logo.png') %>" class="mr-3 h-6 md:h-9 bg-white" alt="Museum Logo" />
+          <img src="<%= require('@/assets/icons/logo.png') %>" class="mr-3 w-6 h-6 md:h-9 md:w-9 bg-white" alt="Museum Logo" />
           <span class="self-center text-xl font-semibold whitespace-nowrap text-white"><%= htmlWebpackPlugin.options.title %></span>
         </a>
         <!-- mobile menu toggle -->
@@ -98,7 +98,7 @@
             <% if (indicate === 0) { %>
               <img
                 id="<%= 'image-' + image.name.substring(0,2) %>"
-                class="w-full lazy-image"
+                class="w-full h-auto lazy-image"
                 src="<%= require('@/assets/images/' + image.name) %>"
                 style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
                 alt="<%= image.companyName %>"
@@ -106,7 +106,7 @@
             <% } else { %>
               <img
                 id="<%= 'image-' + image.name.substring(0,2) %>"
-                class="w-full lazy-image image-loading"
+                class="w-full h-auto lazy-image image-loading"
                 data-src="<%= require('@/assets/images/' + image.name) %>"
                 style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
                 alt="<%= image.companyName %>"

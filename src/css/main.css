@@ -109,6 +109,6 @@
   }
 }
 
-.lazy-image {
+img.lazy-image {
   image-rendering: optimizequality;
 }
