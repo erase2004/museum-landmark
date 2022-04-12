@@ -2,7 +2,7 @@ name: Run Lighthouse CI
 on:
   push:
     branches:
-      - release
+      - 'release'
 jobs:
   lhci:
     name: Lighthouse CI
