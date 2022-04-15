@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: 14
       - name: Download artifact
+        uses: actions/download-artifact@v3
         with:
           name: build-result
           path: ./dist
