@@ -1,0 +1,12 @@
+ci:
+  assert:
+    assertions:
+      categories:performance:
+        - error
+        - minScore: 0.9
+      categories:pwd: off
+  collect:
+    settings:
+      preset: desktop
+  upload:
+    target: temporary-public-storage
