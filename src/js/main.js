@@ -48,24 +48,24 @@ import siteList from '@/js/siteList';
     return new window.Accordion(accordionItems, options)
   }
 
-  const $body = document.querySelector('body')
-
-  // Disable animations/transitions until everything's loaded.
-  $body.classList.add('is-loading')
-
   window.addEventListener('load', function () {
     setMobileMenuToggle()
     setMobileAccordions()
-
-    window.setTimeout(function () {
-      $body.classList.remove('is-loading')
-    }, 100)
   })
 
   // ref: https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#aa-method-1-trigger-the-image-load-using-javascript-events
   document.addEventListener('DOMContentLoaded', function () {
     const lazyloadImages = document.querySelectorAll('img.lazy-image')
+    const amountOfImages = lazyloadImages.length
+    let imageIndex = 0
     let lazyloadThrottleTimeout
+
+    for (;imageIndex < amountOfImages; imageIndex += 1) {
+      const img = lazyloadImages[imageIndex]
+      if (img.src === '') {
+        break
+      }
+    }
 
     function imageLoadedHandle () {
       this.classList.remove('image-loading')
@@ -81,17 +81,22 @@ import siteList from '@/js/siteList';
       }
 
       lazyloadThrottleTimeout = setTimeout(function () {
-        const scrollTop = window.scrollY
-        lazyloadImages.forEach(function (img) {
-          // since parentNode of img has been change to position relative, img.offsetTop will always be 0
-          if (img.parentNode.offsetTop < (window.innerHeight + scrollTop + 700) && img.src === '') {
-            img.src = img.dataset.src
-          }
-        })
-        if (lazyloadImages.length === 0) {
+        if (lazyloadImages.length === 0 || imageIndex >= amountOfImages) {
           document.removeEventListener('scroll', lazyload)
           window.removeEventListener('resize', lazyload)
           window.removeEventListener('orientationChange', lazyload)
+          return
+        }
+
+        const scrollTop = window.scrollY
+        for (;imageIndex < amountOfImages; imageIndex += 1) {
+          const img = lazyloadImages[imageIndex]
+
+          if (img.parentNode.offsetTop < (window.innerHeight + scrollTop + 700) && img.src === '') {
+            img.src = img.dataset.src
+          } else {
+            break
+          }
         }
       }, 20)
     }
