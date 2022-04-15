@@ -1,7 +1,7 @@
 name: Deploy
 on:
   workflow_run:
-    workflows: [Run Lighthouse CI]
+    workflows: [Lighthouse CI]
     types: [completed]
 jobs:
   on-success:
