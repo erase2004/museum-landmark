@@ -1,8 +1,5 @@
 name: Run Lighthouse CI
-on:
-  push:
-    branches:
-      - 'release'
+on: workflow_dispatch
 jobs:
   lhci:
     name: Lighthouse CI
