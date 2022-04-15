@@ -20,11 +20,11 @@ jobs:
       - name: run Lighthouse CI (mobile)
         run: |
           yarn global add @lhci/cli@0.8.x
-          lhci autorun --upload.target=temporary-public-storage --assert.preset=lighthouse:no-pwa
+          lhci autorun --upload.target=temporary-public-storage
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
       - name: run Lighthouse CI (desktop)
         run: |
-          lhci autorun --upload.target=temporary-public-storage --assert.preset=lighthouse:no-pwa --collect.settings.preset=desktop
+          lhci autorun --upload.target=temporary-public-storage --collect.settings.preset=desktop
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
