@@ -2,7 +2,7 @@
 node_modules
 /dist
 /public
-
+.lighthouseci
 
 # local env files
 .env.local
