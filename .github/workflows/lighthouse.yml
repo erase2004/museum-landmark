@@ -17,9 +17,14 @@ jobs:
         run: |
           yarn install
           yarn build
-      - name: run Lighthouse CI
+      - name: run Lighthouse CI (mobile)
         run: |
           yarn global add @lhci/cli@0.8.x
           lhci autorun --upload.target=temporary-public-storage
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      - name: run Lighthouse CI (desktop)
+        run: |
+          lhci autorun --upload.target=temporary-public-storage --assert.preset=lighthouse:recommended --collect.settings.preset=desktop
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
