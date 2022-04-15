@@ -1,0 +1,25 @@
+name: Production Build
+on:
+  workflow_run:
+    workflows: [Run Lighthouse CI]
+    types:
+      - completed
+jobs:
+  build:
+    name: Vue Production Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: yarn install, build
+        run: |
+          yarn install
+          yarn build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          BRANCH: release
+          FOLDER: dist
