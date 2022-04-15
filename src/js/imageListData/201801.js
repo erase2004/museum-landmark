@@ -2,7 +2,8 @@ const baseUrl = 'https://r2-museum.acgn-stock.com/company/detail'
 
 module.exports = [
   {
-    name: '04.png',
+    name: '04',
+    ext: 'png',
     companyName: '立華奏',
     width: 600,
     height: 600,
@@ -10,7 +11,8 @@ module.exports = [
     url: `${baseUrl}/ffCTnTtvNsG7kNA9o`
   },
   {
-    name: '05.jpeg',
+    name: '05',
+    ext: 'jpeg',
     companyName: '厭戰(碧藍航線)',
     width: 1076,
     height: 1076,
@@ -18,7 +20,8 @@ module.exports = [
     url: `${baseUrl}/kQzBbkkQ3npSH57Qk`
   },
   {
-    name: '06.png',
+    name: '06',
+    ext: 'png',
     companyName: '園田海未',
     width: 1315,
     height: 1244,

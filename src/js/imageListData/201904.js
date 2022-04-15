@@ -2,7 +2,8 @@ const baseUrl = 'https://r9-museum.acgn-stock.com/company/detail'
 
 module.exports = [
   {
-    name: '25.png',
+    name: '25',
+    ext: 'png',
     companyName: '小人(青)',
     width: 416,
     height: 706,
@@ -10,7 +11,8 @@ module.exports = [
     url: `${baseUrl}/thPG53e9pKt9QZCxB`
   },
   {
-    name: '26.jpeg',
+    name: '26',
+    ext: 'jpeg',
     companyName: '中野二乃',
     width: 889,
     height: 1200,
@@ -18,7 +20,8 @@ module.exports = [
     url: `${baseUrl}/R98G2eYB84gdF6Q5i`
   },
   {
-    name: '27.jpeg',
+    name: '27',
+    ext: 'jpeg',
     companyName: '絢瀨繪里',
     width: 633,
     height: 900,

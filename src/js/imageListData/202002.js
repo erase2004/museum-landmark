@@ -2,7 +2,8 @@ const baseUrl = 'https://r11-museum.acgn-stock.com/company/detail'
 
 module.exports = [
   {
-    name: '31.png',
+    name: '31',
+    ext: 'png',
     companyName: '真步',
     width: 972,
     height: 697,
@@ -10,7 +11,8 @@ module.exports = [
     url: `${baseUrl}/ow4ZhwvajLhqgb8mT`
   },
   {
-    name: '32.jpeg',
+    name: '32',
+    ext: 'jpeg',
     companyName: '西木野真姬',
     width: 2549,
     height: 1812,
@@ -18,7 +20,8 @@ module.exports = [
     url: `${baseUrl}/iGqxvHWGYoyLJC5qd`
   },
   {
-    name: '33.png',
+    name: '33',
+    ext: 'png',
     companyName: 'アイシア',
     width: 1280,
     height: 720,

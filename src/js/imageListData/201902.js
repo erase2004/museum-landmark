@@ -2,7 +2,8 @@ const baseUrl = 'https://r7-museum.acgn-stock.com/company/detail'
 
 module.exports = [
   {
-    name: '19.png',
+    name: '19',
+    ext: 'png',
     companyName: 'リン·ラインヴァイス',
     width: 553,
     height: 680,
@@ -10,7 +11,8 @@ module.exports = [
     url: `${baseUrl}/wtZvvAi7KXKmuiuLN`
   },
   {
-    name: '20.png',
+    name: '20',
+    ext: 'png',
     companyName: '梅莉·波特魯特',
     width: 680,
     height: 680,
@@ -18,7 +20,8 @@ module.exports = [
     url: `${baseUrl}/WaQmHiGM32Jrk65BK`
   },
   {
-    name: '21.jpeg',
+    name: '21',
+    ext: 'jpeg',
     companyName: '美濃部 鼎',
     width: 1920,
     height: 1080,

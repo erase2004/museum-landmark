@@ -4,8 +4,9 @@
   "description": "Landmark Page for ACGN Stock (https://github.com/mrbigmouth/acgn-stock)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "webp": "node image-to-webp.mjs",
     "dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js --progress --stats verbose",
+    "build": "webpack --config webpack.prod.js --progress",
     "lh:mobile": "lhci autorun --config=./lighthouserc-mobile.yml",
     "lh:desktop": "lhci autorun --config=./lighthouserc-desktop.yml"
   },
@@ -30,6 +31,8 @@
     "html-webpack-harddisk-plugin": "^2.0.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^7.0.0",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.12",
     "postcss-import": "^14.1.0",

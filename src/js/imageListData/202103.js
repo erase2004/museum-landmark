@@ -2,7 +2,8 @@ const baseUrl = 'https://r16-museum.acgn-stock.com/company/detail'
 
 module.exports = [
   {
-    name: '46.jpeg',
+    name: '46',
+    ext: 'jpeg',
     companyName: '四宮輝夜',
     width: 613,
     height: 613,
@@ -10,7 +11,8 @@ module.exports = [
     url: `${baseUrl}/hNYjr7ftN73rdFwmy`
   },
   {
-    name: '47.png',
+    name: '47',
+    ext: 'png',
     companyName: '稜未 小乃葉',
     width: 1280,
     height: 720,
@@ -18,7 +20,8 @@ module.exports = [
     url: `${baseUrl}/iwnKGnLNrKaC3JSeT`
   },
   {
-    name: '48.jpg',
+    name: '48',
+    ext: 'jpg',
     companyName: '千反田愛瑠',
     width: 1080,
     height: 1052,

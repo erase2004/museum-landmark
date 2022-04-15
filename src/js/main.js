@@ -68,7 +68,7 @@ import siteList from '@/js/siteList';
     }
 
     function imageLoadedHandle () {
-      this.classList.remove('image-loading')
+      this.closest('picture').classList.remove('image-loading')
     }
 
     lazyloadImages.forEach((element) => {
@@ -92,7 +92,10 @@ import siteList from '@/js/siteList';
         for (;imageIndex < amountOfImages; imageIndex += 1) {
           const img = lazyloadImages[imageIndex]
 
-          if (img.parentNode.offsetTop < (window.innerHeight + scrollTop + 700) && img.src === '') {
+          if (img.closest('a').offsetTop < (window.innerHeight + scrollTop + 700) && img.src === '') {
+            if (img.dataset.ext !== 'gif') {
+              img.previousElementSibling.srcset = img.previousElementSibling.dataset.srcset
+            }
             img.src = img.dataset.src
           } else {
             break
