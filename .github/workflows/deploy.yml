@@ -8,6 +8,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
@@ -18,9 +19,9 @@ jobs:
           workflow: lighthouse.yml
           workflow_conclusion: success
           name: build-result
-          path: .
+          path: ./dist
       - name: Deploy to release branch
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           BRANCH: release
-          FOLDER: .
+          FOLDER: dist
