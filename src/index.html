@@ -97,31 +97,25 @@
           <% } %>
             <picture class="image-loading">
             <% if (indicate === 0) { %>
-              <% if (image.ext !== 'gif' ) { %>
               <source
                 type="image/webp"
                 srcset="<%= require(`@/assets/images/${image.name}.webp`) %>"
               />
-              <% } %>
               <img
                 id="<%= 'image-' + image.name %>"
                 class="w-full h-auto lazy-image"
                 src="<%= require(`@/assets/images/${image.name}.${image.ext}`) %>"
-                data-ext="<%= image.ext %>"
                 style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
                 alt="<%= image.companyName %>"
               >
             <% } else { %>
-              <% if (image.ext !== 'gif' ) { %>
               <source
                 type="image/webp"
                 data-srcset="<%= require(`@/assets/images/${image.name}.webp`) %>"
               />
-              <% } %>
               <img
                 id="<%= 'image-' + image.name %>"
                 class="w-full h-auto lazy-image"
-                data-ext="<%= image.ext %>"
                 data-src="<%= require(`@/assets/images/${image.name}.${image.ext}`) %>"
                 style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
                 alt="<%= image.companyName %>"

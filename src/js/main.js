@@ -93,9 +93,7 @@ import siteList from '@/js/siteList';
           const img = lazyloadImages[imageIndex]
 
           if (img.closest('a').offsetTop < (window.innerHeight + scrollTop + 700) && img.src === '') {
-            if (img.dataset.ext !== 'gif') {
-              img.previousElementSibling.srcset = img.previousElementSibling.dataset.srcset
-            }
+            img.previousElementSibling.srcset = img.previousElementSibling.dataset.srcset
             img.src = img.dataset.src
           } else {
             break
