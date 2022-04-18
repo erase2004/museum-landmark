@@ -48,9 +48,27 @@ import siteList from '@/js/siteList';
     return new window.Accordion(accordionItems, options)
   }
 
+  function imageLoadedHandle () {
+    this.closest('picture').classList.remove('image-loading')
+  }
+
+  function checkImageLoadStatus () {
+    const lazyloadImages = document.querySelectorAll('img.lazy-image')
+    const amountOfImages = lazyloadImages.length
+
+    for (let index = 0; index < amountOfImages; index += 1) {
+      const img = lazyloadImages[index]
+
+      if (img.complete && img.naturalHeight !== 0) {
+        imageLoadedHandle.call(img)
+      }
+    }
+  }
+
   window.addEventListener('load', function () {
     setMobileMenuToggle()
     setMobileAccordions()
+    checkImageLoadStatus()
   })
 
   // ref: https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#aa-method-1-trigger-the-image-load-using-javascript-events
@@ -65,10 +83,6 @@ import siteList from '@/js/siteList';
       if (img.src === '') {
         break
       }
-    }
-
-    function imageLoadedHandle () {
-      this.closest('picture').classList.remove('image-loading')
     }
 
     lazyloadImages.forEach((element) => {
