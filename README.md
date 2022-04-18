@@ -18,6 +18,7 @@ Landmark page for the Museums of [ACGN Stock](https://acgn-stock.com/)
 - [ESLint](https://eslint.org/)
 - [Stylelint](https://stylelint.io/)
 - [PostCSS](https://postcss.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 - - -
 
@@ -28,6 +29,11 @@ Landmark page for the Museums of [ACGN Stock](https://acgn-stock.com/)
 yarn install
 ```
 
+### Compile images into webp
+```
+yarn webp
+```
+
 ### Compiles and hot-reloads for development
 ```
 yarn dev
@@ -36,6 +42,16 @@ yarn dev
 ### Compiles and minifies for production
 ```
 yarn build
+```
+
+### Lighthouse benchmark (mobile)
+```
+yarn lh:mobile
+```
+
+### Lighthouse benchmark (desktop)
+```
+yarn lh:desktop
 ```
 
 - - -
