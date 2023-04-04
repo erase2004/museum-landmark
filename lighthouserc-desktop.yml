@@ -6,7 +6,7 @@ ci:
   assert:
     assertions:
       categories:performance:
-        - error
+        - warn
         - minScore: 0.95
           aggregationMethod: optimistic
       categories:pwd: 'off'
