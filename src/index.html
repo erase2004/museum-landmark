@@ -87,41 +87,68 @@
         <% for (const image of list) { %>
           <% if (index === 0 ) { %>
           <!-- first place -->
-          <a class="block border-8 border-solid border-yellow-500 rounded-md relative" href="<%= image.url %>" target="_blank" rel="noopener">
+          <a class="media-item loading block border-8 border-solid border-yellow-500 rounded-md relative" href="<%= image.url %>" target="_blank" rel="noopener" title="<%= image.companyName %>">
           <% } else if (index === 1) { %>
           <!-- second place -->
-          <a class="block border-8 border-solid border-neutral-500 rounded-md relative" href="<%= image.url %>" target="_blank" rel="noopener">
+          <a class="media-item loading block border-8 border-solid border-neutral-500 rounded-md relative" href="<%= image.url %>" target="_blank" rel="noopener" title="<%= image.companyName %>">
           <% } else { %>
           <!-- third place -->
-          <a class="block border-8 border-solid border-lime-800 rounded-md relative" href="<%= image.url %>" target="_blank" rel="noopener">
+          <a class="media-item loading block border-8 border-solid border-lime-800 rounded-md relative" href="<%= image.url %>" target="_blank" rel="noopener" title="<%= image.companyName %>">
           <% } %>
-            <picture class="image-loading">
-            <% if (indicate === 0) { %>
-              <source
-                type="image/webp"
-                srcset="<%= require(`@/assets/images/${image.name}.webp`) %>"
-              />
-              <img
-                id="<%= 'image-' + image.name %>"
-                class="w-full h-auto lazy-image"
-                src="<%= require(`@/assets/images/${image.name}.${image.ext}`) %>"
-                style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
-                alt="<%= image.companyName %>"
-              >
+            <% if (image.isVideo) { %>
+              
+                <% if (indicate === 0) { %>
+                  <video class="w-full" style="background-color: <%= image.color %>;" autoplay muted loop width="<%= image.width %>" height="<%= image.height %>" poster="<%= require(`@/assets/images/video-poster.jpg`) %>">
+                    <source
+                      type="video/webm"
+                      src="<%= require(`@/assets/images/${image.name}.webm`) %>"
+                    />
+                    <source
+                      type="video/mp4"
+                      src="<%= require(`@/assets/images/${image.name}.mp4`) %>"
+                    >
+                <% } else { %>
+                  <video class="w-full loading" style="background-color: <%= image.color %>;" autoplay muted loop width="<%= image.width %>" height="<%= image.height %>" poster="<%= require(`@/assets/images/video-poster.jpg`) %>">
+                    <source
+                      type="video/webm"
+                      data-src="<%= require(`@/assets/images/${image.name}.webm`) %>"
+                    />
+                    <source
+                      type="video/mp4"
+                      data-src="<%= require(`@/assets/images/${image.name}.mp4`) %>"
+                    >
+                <% } %>
+                <p><%= image.companyName %></p>
+              </video>
             <% } else { %>
-              <source
-                type="image/webp"
-                data-srcset="<%= require(`@/assets/images/${image.name}.webp`) %>"
-              />
-              <img
-                id="<%= 'image-' + image.name %>"
-                class="w-full h-auto lazy-image"
-                data-src="<%= require(`@/assets/images/${image.name}.${image.ext}`) %>"
-                style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
-                alt="<%= image.companyName %>"
-              >
+              <picture>
+              <% if (indicate === 0) { %>
+                <source
+                  type="image/webp"
+                  srcset="<%= require(`@/assets/images/${image.name}.webp`) %>"
+                />
+                <img
+                  id="<%= 'image-' + image.name %>"
+                  class="w-full h-auto"
+                  src="<%= require(`@/assets/images/${image.name}.${image.ext}`) %>"
+                  style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
+                  alt="<%= image.companyName %>"
+                >
+              <% } else { %>
+                <source
+                  type="image/webp"
+                  data-srcset="<%= require(`@/assets/images/${image.name}.webp`) %>"
+                />
+                <img
+                  id="<%= 'image-' + image.name %>"
+                  class="w-full h-auto"
+                  data-src="<%= require(`@/assets/images/${image.name}.${image.ext}`) %>"
+                  style="aspect-ratio: <%= image.width %> / <%= image.height %>; background-color: <%= image.color %>;"
+                  alt="<%= image.companyName %>"
+                >
+              <% } %>
+              </picture>
             <% } %>
-            </picture>
             <div class="loading-effect">
               <div class="circle animate-circle-bumping"></div>
               <div class="circle animate-circle-bumping"></div>
@@ -129,7 +156,7 @@
               <div class="shadow animate-shadow-transfrom"></div>
               <div class="shadow animate-shadow-transfrom"></div>
               <div class="shadow animate-shadow-transfrom"></div>
-              <span>圖片載入中</span>
+              <span>影像載入中</span>
             </div>
           </a>
           <% index += 1; %>

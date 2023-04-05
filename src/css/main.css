@@ -36,14 +36,14 @@
     @apply text-gray-600 hover:bg-transparent hover:text-gray-600;
   }
 
-  .loading-effect {
+  a.media-item .loading-effect {
     width: 200px;
     height: 60px;
 
     @apply hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
   }
 
-  .image-loading ~ .loading-effect {
+  a.media-item.loading .loading-effect {
     @apply block;
   }
 
@@ -109,6 +109,6 @@
   }
 }
 
-img.lazy-image {
+picture > img {
   image-rendering: optimizequality;
 }
