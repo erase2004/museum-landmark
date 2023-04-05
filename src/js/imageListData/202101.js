@@ -3,12 +3,13 @@ const baseUrl = 'https://r14-museum.acgn-stock.com/company/detail'
 module.exports = [
   {
     name: '40',
-    ext: 'gif',
+    ext: 'mp4',
     companyName: '小花',
     width: 854,
     height: 480,
     color: '#86baea',
-    url: `${baseUrl}/wrQcnfX2rwYhgqeHH`
+    url: `${baseUrl}/wrQcnfX2rwYhgqeHH`,
+    isVideo: true
   },
   {
     name: '41',

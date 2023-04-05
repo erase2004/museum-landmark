@@ -8,7 +8,8 @@ module.exports = [
     width: 600,
     height: 600,
     color: '#aa6258',
-    url: `${baseUrl}/L2nenXjFA2u6Age9y`
+    url: `${baseUrl}/L2nenXjFA2u6Age9y`,
+    isVideo: true
   },
   {
     name: '65',
