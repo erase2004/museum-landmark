@@ -179,6 +179,11 @@ Removes the default spacing and border for appropriate elements.
 */
 
 
+p {
+  margin: 0;
+}
+
+
 ul,
 menu {
   list-style: none;
@@ -214,7 +219,8 @@ Make sure disabled buttons don't get the pointer cursor.
 */
 
 img,
-svg {
+svg,
+video {
   display: block; /* 1 */
   vertical-align: middle; /* 2 */
 }
@@ -223,7 +229,8 @@ svg {
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
 
-img {
+img,
+video {
   max-width: 100%;
   height: auto;
 }
@@ -448,7 +455,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
-.loading-effect {
+a.media-item .loading-effect {
     width: 200px;
     height: 60px;
     position: absolute;
@@ -460,7 +467,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
             transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
-.image-loading ~ .loading-effect {
+a.media-item.loading .loading-effect {
   display: block;
 }
 .circle {
@@ -767,7 +774,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
           box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-img.lazy-image {
+picture > img {
   image-rendering: optimizequality;
 }
 .hover\:bg-gray-700:hover {
