@@ -30,11 +30,11 @@
       <div class="container flex flex-wrap justify-between items-center mx-auto">
         <!-- logo, title -->
         <a href="#" class="flex items-center">
-          <img src="<%= require('@/assets/icons/logo.png') %>" class="mr-3 w-6 h-6 md:h-9 md:w-9 bg-white" alt="Museum Logo" />
-          <span class="self-center text-xl font-semibold whitespace-nowrap text-white"><%= htmlWebpackPlugin.options.title %></span>
+          <img src="<%= require('@/assets/icons/logo.png') %>" class="mr-3 w-6 h-6 md:h-9 md:w-9 bg-white GTM-site-logo" alt="Museum Logo" />
+          <span class="self-center text-xl font-semibold whitespace-nowrap text-white GTM-site-title"><%= htmlWebpackPlugin.options.title %></span>
         </a>
         <!-- mobile menu toggle -->
-        <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm rounded-md md:hidden focus:outline-none focus:ring-1 text-gray-400 hover:bg-gray-700 focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+        <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm rounded-md md:hidden focus:outline-none focus:ring-1 text-gray-400 hover:bg-gray-700 focus:ring-gray-600 GTM-mobile-toggle" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
           <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -44,7 +44,7 @@
             <% for (const [year, list] of Object.entries(siteList).reverse()) { %>
             <li>
               <div class="block md:hidden">
-                <button type="button" class="accordion-header" data-accordion-target="#accordion-collapse-body-<%= year %>" aria-expanded="true" aria-controls="accordion-collapse-body-<%= year %>">
+                <button type="button" class="accordion-header GTM-toggle-item" data-accordion-target="#accordion-collapse-body-<%= year %>" aria-expanded="true" aria-controls="accordion-collapse-body-<%= year %>">
                   <span><%= year %></span>
                   <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </button>
@@ -56,7 +56,7 @@
                         <% if (site.disabled) { %>
                         <a href="#" class="accordion-link link-disabled" disabled rel="noopener">
                         <% } else { %>
-                        <a href="<%= site.url %>" class="accordion-link" target="_blank" rel="noopener">
+                        <a href="<%= site.url %>" class="accordion-link GTM-site-link" target="_blank" rel="noopener">
                         <% } %>
                           <%= site.title %>
                         </a>
@@ -67,7 +67,7 @@
                 </div>
               </div>
               <div class="hidden md:block">
-                <button data-dropdown-toggle="dropdown-<%= year %>" class="dropdown-button">
+                <button data-dropdown-toggle="dropdown-<%= year %>" class="dropdown-button GTM-toggle-item">
                   <%= year %>
                   <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </button>
@@ -79,7 +79,7 @@
                       <% if (site.disabled) { %>
                       <a href="#" class="dropdown-link link-disabled" disabled rel="noopener">
                       <% } else { %>
-                      <a href="<%= site.url %>" class="dropdown-link" target="_blank" rel="noopener">
+                      <a href="<%= site.url %>" class="dropdown-link GTM-site-link" target="_blank" rel="noopener">
                       <% } %>
                         <%= site.title %>
                       </a>
@@ -105,13 +105,13 @@
         <% for (const image of list) { %>
           <% if (index === 0 ) { %>
           <!-- first place -->
-          <a class="media-item loading block border-8 border-solid border-yellow-500 rounded-md relative" href="<%= image.url %>" target="_blank" rel="noopener" title="<%= image.companyName %>">
+          <a class="media-item loading block border-8 border-solid border-yellow-500 rounded-md relative GTM-first-item" href="<%= image.url %>" target="_blank" rel="noopener" title="<%= image.companyName %>">
           <% } else if (index === 1) { %>
           <!-- second place -->
-          <a class="media-item loading block border-8 border-solid border-neutral-500 rounded-md relative" href="<%= image.url %>" target="_blank" rel="noopener" title="<%= image.companyName %>">
+          <a class="media-item loading block border-8 border-solid border-neutral-500 rounded-md relative GTM-second-item" href="<%= image.url %>" target="_blank" rel="noopener" title="<%= image.companyName %>">
           <% } else { %>
           <!-- third place -->
-          <a class="media-item loading block border-8 border-solid border-lime-800 rounded-md relative" href="<%= image.url %>" target="_blank" rel="noopener" title="<%= image.companyName %>">
+          <a class="media-item loading block border-8 border-solid border-lime-800 rounded-md relative GTM-third-item" href="<%= image.url %>" target="_blank" rel="noopener" title="<%= image.companyName %>">
           <% } %>
             <% if (image.isVideo) { %>
               
