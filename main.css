@@ -179,6 +179,7 @@ Removes the default spacing and border for appropriate elements.
 */
 
 
+dl,
 p {
   margin: 0;
 }
@@ -220,7 +221,8 @@ Make sure disabled buttons don't get the pointer cursor.
 
 img,
 svg,
-video {
+video,
+iframe {
   display: block; /* 1 */
   vertical-align: middle; /* 2 */
 }
