@@ -3,6 +3,11 @@ const museumBaseUrl = 'museum.acgn-stock.com'
 module.exports = {
   2024: [
     {
+      title: '(Γ) 2024/03/31 ~ 2024/06/30',
+      url: `https://r27-${museumBaseUrl}`,
+      disabled: false
+    },
+    {
       title: '(Β) 2023/12/31 ~ 2024/03/31',
       url: `https://r26-${museumBaseUrl}`,
       disabled: false
