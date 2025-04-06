@@ -1,4 +1,5 @@
 module.exports = {
+  202501: require('./imageListData/202501'),
   202404: require('./imageListData/202404'),
   202403: require('./imageListData/202403'),
   202402: require('./imageListData/202402'),
