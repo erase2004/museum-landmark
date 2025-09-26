@@ -17,7 +17,7 @@ jobs:
         run: |
           yarn install
           yarn build
-          yarn global add @lhci/cli@0.14.x
+          yarn global add @lhci/cli@0.15.x
       - name: Run Lighthouse CI (mobile)
         run: |
           lhci autorun --config=./lighthouserc-mobile.yml
