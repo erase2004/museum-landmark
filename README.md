@@ -1,5 +1,13 @@
-# Museum Landmark
+# Museum Landmark (ARCHIVED)
+**This repository has been officially archived and is no longer actively maintained.**
+
 Landmark page for the Museums of [ACGN Stock](https://acgn-stock.com/)
+
+- - -
+
+## Successor Project
+
+* [museum-landmark-astro](https://github.com/erase2004/museum-landmark-astro)
 
 - - -
 
@@ -65,3 +73,6 @@ yarn lh:desktop
     /src/assets/images - pictures
     /public            - development output directory
     /dist              - production output directory
+
+- - -
+
